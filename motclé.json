@@ -19,6 +19,13 @@
             "trigger": ["oui", "j'ai", "je suis"],
             "severity": 5
         },
+        {
+            "word": "douleur toracique",
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "je suis"],
+            "severity": 5
+        },
+        
 
     ]
 }

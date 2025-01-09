@@ -2,27 +2,30 @@
     "keywords":[
         {
             "word": "douleur toracique",
-            "synonyms": ["", ""],
+            "synonyms": ["douleur à la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", "je suis"],
+            "trigger": ["oui", "j'ai"],
             "severity": 5
         },
         {
-            "word": "oppression",
+            "word": "douleur epigastrique",
+            "synonyms": ["douleur au ventre", "douleur gastrique"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", "je suis"],
-            "severity": 3
+            "trigger": ["oui", "j'ai"],
+            "severity": 2
         },
         {
-            "word": "douleur toracique",
+            "word": "irradie dans le bras gauche",
+            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", "je suis"],
+            "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
-            "word": "douleur toracique",
+            "word": "irradie dans la machoire",
+            "synonyms": ["douleur dans la machoire", "mal à la machoire"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", "je suis"],
+            "trigger": ["oui", "j'ai"],
             "severity": 5
         },
         

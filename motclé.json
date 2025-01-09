@@ -1,0 +1,24 @@
+{
+    "keywords":[
+        {
+            "word": "douleur toracique",
+            "synonyms": ["", ""],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "je suis"],
+            "severity": 5
+        },
+        {
+            "word": "oppression",
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "je suis"],
+            "severity": 3
+        },
+        {
+            "word": "douleur toracique",
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "je suis"],
+            "severity": 5
+        },
+
+    ]
+}

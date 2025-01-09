@@ -2,7 +2,7 @@
     "keywords":[
         {
             "word": "douleur toracique",
-            "synonyms": ["douleur à la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax"],
+            "synonyms": ["douleur à la poitrine","brule la poitrine", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -26,6 +26,13 @@
             "synonyms": ["douleur dans la machoire", "mal à la machoire"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "douleur permanente",
+            "synonyms": ["douleur continue", "douleur constante"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
         },
         

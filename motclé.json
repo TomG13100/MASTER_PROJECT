@@ -1,8 +1,8 @@
 {
     "keywords":[
         {
-            "word": "douleur toracique",
-            "synonyms": ["douleur à la poitrine","brule la poitrine", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax"],
+            "word": "douleur thoracique",
+            "synonyms": ["douleur à la poitrine","brule la poitrine", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax", "poids sur la poitrine"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -35,7 +35,12 @@
             "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
         },
-        
-
+        {
+            "word": "diabète",
+            "synonyms": ["", ""],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 5
+        },
     ]
 }

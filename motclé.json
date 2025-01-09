@@ -16,14 +16,14 @@
         },
         {
             "word": "irradie dans le bras gauche",
-            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche"],
+            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche", "fourmis dans la machoire"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
             "word": "irradie dans la machoire",
-            "synonyms": ["douleur dans la machoire", "mal à la machoire"],
+            "synonyms": ["douleur dans la machoire", "mal à la machoire", "irradie dans le cou", "mal dans le cou"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -34,6 +34,27 @@
             "role": "patient",
             "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
+        },
+        {
+            "word": "sueur",
+            "synonyms": ["il sue beaucoup", "je sue beaucoup", "pâle", "très pâle", "gris"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 2
+        },
+        {
+            "word": "difficulté respiratoire",
+            "synonyms": ["du mal a respirer"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 4
+        },
+        {
+            "word": "atécédents",
+            "synonyms": ["antécédents familliaux", "déjà eu un cas dans sa famille"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ma mère", "mon père"],
+            "severity": 2
         },
         
 

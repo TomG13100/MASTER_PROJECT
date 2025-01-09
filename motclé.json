@@ -1,7 +1,7 @@
 {
     "keywords":[
         {
-            "word": "douleur toracique",
+            "word": "douleur thoracique",
             "synonyms": ["", ""],
             "role": "patient",
             "trigger": ["oui", "j'ai", "je suis"],
@@ -14,13 +14,13 @@
             "severity": 3
         },
         {
-            "word": "douleur toracique",
+            "word": "douleur thoracique",
             "role": "patient",
             "trigger": ["oui", "j'ai", "je suis"],
             "severity": 5
         },
         {
-            "word": "douleur toracique",
+            "word": "douleur thoracique",
             "role": "patient",
             "trigger": ["oui", "j'ai", "je suis"],
             "severity": 5

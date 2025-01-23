@@ -1,4 +1,2 @@
 *.wav
 *__pycache__
-# Ajouter config.json à .gitignore
-config.json

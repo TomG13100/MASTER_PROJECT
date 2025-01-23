@@ -1,4 +1,4 @@
-from models.cnn_model import build_cnn_model
+from models.mlp_model import build_cnn_model
 from scripts.preprocess_audio import preprocess_audio
 from sklearn.model_selection import train_test_split
 import tensorflow as tf

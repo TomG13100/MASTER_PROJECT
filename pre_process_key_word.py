@@ -8,8 +8,8 @@ def load_words_from_json(file_path):
     return [word.strip().lower() for word in data.get("words", [])]
 
 # Chargement des bases de données de mots
-sca_words = load_words_from_json("sca_words.json")
-non_sca_words = load_words_from_json("non_sca_words.json")
+sca_words = load_words_from_json("/Users/straudothea/Documents/GitHub/MASTER_PROJECT/base_de_donnees/sca_words.json")
+non_sca_words = load_words_from_json("/Users/straudothea/Documents/GitHub/MASTER_PROJECT/base_de_donnees/non_sca_words.json")
 
 # Vérification des chargements
 print("SCA Words:", sca_words)

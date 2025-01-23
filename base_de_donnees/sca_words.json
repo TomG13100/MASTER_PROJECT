@@ -41,6 +41,6 @@
             "role": "patient",
             "trigger": ["oui", "j'ai", ""],
             "severity": 5
-        },
+        }
     ]
 }

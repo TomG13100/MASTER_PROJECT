@@ -1,12 +1,15 @@
 import whisper
 import os
 print(os.getcwd())
+import json
 
 from pyannote.audio import Pipeline
 from utils import words_per_segment
+# Chemin vers le fichier config.json
+CONFIG_FILE = "config.json"
 
 pipeline = Pipeline.from_pretrained(
-    "pyannote/speaker-diarization-3.1", use_auth_token="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"
+    "pyannote/speaker-diarization-3.1", use_auth_token="HF_AUTH_TOKEN"
 )
 audio_path = "audio/Enregistrement.wav"
 

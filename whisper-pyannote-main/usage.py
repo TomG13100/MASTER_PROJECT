@@ -11,7 +11,7 @@ CONFIG_FILE = "secrets.json"
 pipeline = Pipeline.from_pretrained(
     "pyannote/speaker-diarization-3.1", use_auth_token="HF_AUTH_TOKEN"
 )
-audio_path = "audio/Enregistrement.wav"
+audio_path = "data/raw/Enregistrement.wav"
 
 model = whisper.load_model("small")
 diarization_result = pipeline(audio_path)

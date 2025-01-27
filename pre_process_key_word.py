@@ -1,8 +1,11 @@
 import json
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+#transformer du texte brute en representation numérique exploitables par des NLP
+#countVectorizer: indique combien de fois un mot apparait dans un texte
+#TfidfVectorizer: indique l'importance d'un mot dans un texte (mot rare = précieux)
 
 # Fonction pour charger les mots depuis un fichier JSON
-def load_words_from_json(file_path):
+def load_words(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
@@ -11,17 +14,16 @@ def load_words_from_json(file_path):
     # Extraire les mots et synonymes de chaque entrée
     for item in data.get("keywords", []):
         # Ajouter le mot principal
-        words.append(item["word"].strip().lower())  
+        #ajoute la valeur associée à la clé "word" dans la liste "words", supprime les espaces et met en minuscule
+        words.append(item["word"].strip().lower())
         for synonym in item["synonyms"]:
             if synonym.strip():  # Ignorer les synonymes vides
                 words.append(synonym.strip().lower())
-    
-    print(f"Words loaded from {file_path}: {words}")  # Vérification
     return words
 
 # Chargement des bases de données de mots
-sca_words = load_words_from_json("/Users/straudothea/Documents/GitHub/MASTER_PROJECT/base_de_donnees/sca_words.json")
-non_sca_words = load_words_from_json("/Users/straudothea/Documents/GitHub/MASTER_PROJECT/base_de_donnees/non_sca_words.json")
+sca_words = load_words("/Users/straudothea/Documents/GitHub/MASTER_PROJECT/base_de_donnees/sca_words.json")
+non_sca_words = load_words("/Users/straudothea/Documents/GitHub/MASTER_PROJECT/base_de_donnees/non_sca_words.json")
 
 # Vérification que les mots sont bien chargés
 if not sca_words or not non_sca_words:
@@ -46,7 +48,7 @@ print(f"Matrice de Bag of Words (CountVectorizer):\n{X_bow.toarray()}")
 # Afficher les termes extraits
 print(f"Termes extraits par CountVectorizer: {vectorizer.get_feature_names_out()}")
 
-# Vous pouvez aussi utiliser TfidfVectorizer si vous voulez un poids pour chaque mot
+# TfidfVectorizer poids pour chaque mot
 tfidf_vectorizer = TfidfVectorizer()
 
 # Appliquer la vectorisation TF-IDF sur les mots

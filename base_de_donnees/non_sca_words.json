@@ -13,13 +13,6 @@
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 2
-        },
-        {
-            "word": "dyspnée",
-            "synonyms": ["respiration anormale", "essoufflement"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 5
         }
     ]
 }

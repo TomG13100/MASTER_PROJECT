@@ -1,6 +1,13 @@
 {
     "keywords":[
         {
+            "word": "douleur",
+            "synonyms": ["gène", "mal"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
             "word": "douleur thoracique",
             "synonyms": ["douleur à la poitrine","brule la poitrine", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax", "poids sur la poitrine"],
             "role": "patient",
@@ -30,7 +37,7 @@
         },
         {
             "word": "douleur permanente",
-            "synonyms": ["douleur continue", "douleur constante"],
+            "synonyms": ["douleur continue", "douleur constante", "douleur aigue", "douleur persistante"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
@@ -40,6 +47,34 @@
             "synonyms": ["", ""],
             "role": "patient",
             "trigger": ["oui", "j'ai", ""],
+            "severity": 1
+        },
+        {
+            "word": "dyspnée",
+            "synonyms": ["respiration anormale", "essoufflement"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 2
+        },
+        {
+            "word": "sudation",
+            "synonyms": ["transpiration", "sueur"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 2
+        },
+        {
+            "word": "nausée",
+            "synonyms": ["haut-le-coeur", "envie de vomir"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 2
+        },
+        {
+            "word": "douleur à l'effort",
+            "synonyms": ["douleur lors d'une activité physique"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         }
     ]

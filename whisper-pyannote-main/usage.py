@@ -6,7 +6,7 @@ import json
 from pyannote.audio import Pipeline
 from utils import words_per_segment
 # Chemin vers le fichier config.json
-CONFIG_FILE = "secret.json"
+CONFIG_FILE = "secrets.json"
 
 pipeline = Pipeline.from_pretrained(
     "pyannote/speaker-diarization-3.1", use_auth_token="HF_AUTH_TOKEN"

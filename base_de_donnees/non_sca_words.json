@@ -8,11 +8,39 @@
             "severity": 5
         },
         {
-            "word": "pouls asymétrique",
-            "synonyms": ["", ""],
+            "word": "fièvre",
+            "synonyms": [],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
-            "severity": 2
+            "severity": 5
+        },
+        {
+            "word": "toux",
+            "synonyms": ["toux sèche", "toux grasse", "toux persistante", "toux chronique"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "douleur intense",
+            "synonyms": ["douleur brutale"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "douleur dans le dos",
+            "synonyms": ["douleur dorsale"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "courbatures",
+            "synonyms": [],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
         }
     ]
 }

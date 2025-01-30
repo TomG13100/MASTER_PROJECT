@@ -1,15 +1,8 @@
 {
     "keywords":[
         {
-            "word": "douleur",
-            "synonyms": ["gène", "mal"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 5
-        },
-        {
             "word": "douleur thoracique",
-            "synonyms": ["douleur à la poitrine","brule la poitrine", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard"],
+            "synonyms": ["douleur à la poitrine","brule la poitrine", "oppression thoracique", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard", "douleur constrictive", "sensation de pesanteur"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -23,14 +16,28 @@
         },
         {
             "word": "irradie dans le bras gauche",
-            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche", "picotement dans le bras gauche", "fourmillement dans le bras gauche"],
+            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche", "picotement dans le bras gauche", "fourmillement dans le bras gauche", "gène dans le bras gauche"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "irradie dans le bras droit",
+            "synonyms": ["douleur dans le bras droit", "mal dans le bras droit", "picotement dans le bras droit", "fourmillement dans le bras droit", "gène dans le bras droit"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "irradie dans l'épaule'",
+            "synonyms": ["douleur dans l'épaule'", "mal dans l'épaule'", "picotement dans l'épaule'", "fourmillement dans l'épaule'", "gène dans l'épaule'"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
             "word": "irradie dans la machoire",
-            "synonyms": ["douleur dans la machoire", "mal à la machoire", "picotement dans la machoire", "fourmillement dans la machoire"],
+            "synonyms": ["douleur dans la machoire", "mal à la machoire", "picotement dans la machoire", "fourmillement dans la machoire", "gène dans la machoire"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -44,14 +51,14 @@
         },
         {
             "word": "diabète",
-            "synonyms": ["", ""],
+            "synonyms": ["traitement pour le diabète", "médicament pour le diabète"],
             "role": "patient",
             "trigger": ["oui", "j'ai", ""],
             "severity": 1
         },
         {
             "word": "dyspnée",
-            "synonyms": ["respiration anormale", "essoufflement"],
+            "synonyms": ["respiration anormale", "essoufflement","mal à respirer", "gèner pour respirer"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 2
@@ -72,14 +79,14 @@
         },
         {
             "word": "douleur à l'effort",
-            "synonyms": ["douleur lors d'une activité physique"],
+            "synonyms": ["douleur lors d'une activité physique", "douleur déclenché à l'effort"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
             "word": "tabac",
-            "synonyms": ["tabagisme", "fumeur"],
+            "synonyms": ["tabagisme", "fumeur", "fumée"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
@@ -89,6 +96,34 @@
             "synonyms": ["stent", "angioplastie"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "opération du coeur",
+            "synonyms": [""],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "tension",
+            "synonyms": ["hypertension", "médicament pour la tension", "traitement pour la tension"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "obésité",
+            "synonyms": ["surpoids"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "cholestérol",
+            "synonyms": ["hypercholestérolémie"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
             "severity": 5
         }
     ]

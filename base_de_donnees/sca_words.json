@@ -9,7 +9,7 @@
         },
         {
             "word": "douleur thoracique",
-            "synonyms": ["douleur à la poitrine","brule la poitrine", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax", "poids sur la poitrine"],
+            "synonyms": ["douleur à la poitrine","brule la poitrine", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -23,14 +23,14 @@
         },
         {
             "word": "irradie dans le bras gauche",
-            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche"],
+            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche", "picotement dans le bras gauche", "fourmillement dans le bras gauche"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
             "word": "irradie dans la machoire",
-            "synonyms": ["douleur dans la machoire", "mal à la machoire"],
+            "synonyms": ["douleur dans la machoire", "mal à la machoire", "picotement dans la machoire", "fourmillement dans la machoire"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -73,6 +73,20 @@
         {
             "word": "douleur à l'effort",
             "synonyms": ["douleur lors d'une activité physique"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "tabac",
+            "synonyms": ["tabagisme", "fumeur"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 5
+        },
+        {
+            "word": "porte un stent",
+            "synonyms": ["stent", "angioplastie"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5

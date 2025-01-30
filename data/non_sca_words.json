@@ -1,0 +1,18 @@
+{
+    "keywords":[
+        {
+            "word": "douleur intermitente",
+            "synonyms": ["douleur passagère", "douleur qui revient", "douleur à la palpation"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "pouls asymétrique",
+            "synonyms": ["", ""],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 2
+        }
+    ]
+}

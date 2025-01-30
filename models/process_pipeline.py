@@ -2,7 +2,7 @@ import os
 import json
 import numpy as np
 from tensorflow.keras.models import load_model
-from pre_process_key_word import all_words, severity_map
+from scripts.pre_process_key_word import all_words, severity_map
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -33,24 +33,24 @@ def predict_from_transcriptions(transcription_dir, model_path):
         # Prédiction IA basée sur le texte
         tokenizer.fit_on_texts([text])
         sequence = tokenizer.texts_to_sequences([text])
-        X_test = pad_sequences(sequence, maxlen=20)
+        X_test = pad_sequences(sequence, maxlen=5)
 
         prediction = model.predict(X_test)
         probability_sca = prediction[0][1]
 
         # Résumé des résultats
         results[file] = {
-            "probabilité_SCA": round(probability_sca, 2),
+            "probabilité_SCA": float(round(probability_sca, 2)),  # Convertir float32 en float standard
             "symptômes_detectés": detected_symptoms,
-            "score_de_gravité": round(avg_severity, 2),
+            "score_de_gravité": float(round(avg_severity, 2)),  # Convertir en float standard
             "conclusion": "SCA détecté 🛑" if probability_sca > 0.5 else "Pas de SCA ✅"
         }
 
     # ✅ Enregistrer les résultats dans un fichier JSON
-    with open("transcriptions/diagnostic_results.json", "w", encoding="utf-8") as f:
+    with open("data/transcriptions audio/diagnostic_results.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
-    print("📊 Analyse terminée ! Résultats enregistrés dans `transcriptions/diagnostic_results.json`")
+    print("📊 Analyse terminée ! Résultats enregistrés dans `data/transcriptions audio/diagnostic_results.json`")
 
 # Exécuter la prédiction
-predict_from_transcriptions("transcriptions", "models/sca_model.h5")
+predict_from_transcriptions("data/transcriptions audio/", "models/sca_model.h5")

@@ -2,7 +2,7 @@ from tensorflow.keras import layers, models
 
 def build_mlp_model(input_shape, num_classes):
     model = models.Sequential([
-        layers.Input(shape=input_shape),
+        layers.Input(input_shape),
         layers.Dense(128, activation='relu'),
         layers.Dropout(0.5),
         layers.Dense(64, activation='relu'),

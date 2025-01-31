@@ -41,6 +41,20 @@
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
+        },
+        {
+            "word": "angoisse",
+            "synonyms": ["anxiété", "stress", "crise d'angoisse"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "antécédents psychiatriques",
+            "synonyms": ["psychatre, psychiatrique"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
         }
     ]
 }

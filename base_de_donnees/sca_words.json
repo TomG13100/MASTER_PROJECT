@@ -2,7 +2,8 @@
     "keywords":[
         {
             "word": "douleur thoracique",
-            "synonyms": ["douleur à la poitrine","brule la poitrine", "oppression thoracique", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine", "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard", "douleur constrictive", "sensation de pesanteur"],
+            "synonyms": ["douleur à la poitrine","brule la poitrine", "oppression thoracique", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine",
+            "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard", "douleur constrictive", "sensation de pesanteur", "douleur dans le torse", "pointe au coeur"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -100,7 +101,7 @@
         },
         {
             "word": "opération du coeur",
-            "synonyms": [""],
+            "synonyms": ["coronarien stenté", "coronarien"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
@@ -122,6 +123,27 @@
         {
             "word": "cholestérol",
             "synonyms": ["hypercholestérolémie"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "antécedent d'infarctus",
+            "synonyms": ["antécedent de crise cardiaque", "douleur identique à l'infarctus"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "trinitrine",
+            "synonyms": ["boufée", "natispray"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "patch de trinitrine",
+            "synonyms": ["discotrine"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5

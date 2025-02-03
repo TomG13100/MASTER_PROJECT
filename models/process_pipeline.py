@@ -9,8 +9,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 # Run usage.py
-print(f"Executing usage.py to generate transcriptions...")
-subprocess.run(["python", "whisper-pyannote-main/usage.py"], check=True)
+print(f"Executing transcribe_diarize.py to generate transcriptions...")
+subprocess.run(["python", "models/transcribe_diarize.py"], check=True)
 
 # Charger le modèle IA
 model = load_model("models/sca_model.h5")

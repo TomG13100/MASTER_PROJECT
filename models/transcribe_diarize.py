@@ -1,40 +1,43 @@
-import os
 import whisper
+import os
+print(os.getcwd())
+import json
+
 from pyannote.audio import Pipeline
+from whisperpyannotemain.utils import words_per_segment
+# Chemin vers le fichier config.json
+CONFIG_FILE = "secrets.json"
 
-def transcribe_and_separate(audio_path, output_dir, hf_token):
-    """
-    Transcrit un fichier audio et sépare les transcriptions par locuteur.
+pipeline = Pipeline.from_pretrained(
+    "pyannote/speaker-diarization-3.1", use_auth_token="HF_AUTH_TOKEN"
+)
+audio_path = "data/raw/Audio-SCA-1.wav"
 
-    Args:
-        audio_path (str): Chemin du fichier audio.
-        output_dir (str): Répertoire où enregistrer les fichiers de transcription.
-        hf_token (str): Jeton Hugging Face pour Pyannote.
-    """
-    os.makedirs(output_dir, exist_ok=True)
+model = whisper.load_model("small")
+diarization_result = pipeline(audio_path)
+transcription_result = model.transcribe(audio_path, word_timestamps=True)
 
-    # Transcrire avec Whisper
-    print("Transcription avec Whisper...")
-    model = whisper.load_model("small")
-    transcription = model.transcribe(audio_path)
+final_result = words_per_segment(transcription_result, diarization_result)
+# Save each speaker's transcription into separate files
+output_dir = "data/transcriptions audio"
+os.makedirs(output_dir, exist_ok=True)
 
-    # Diarisation avec Pyannote
-    print("Diarisation avec Pyannote...")
-    pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization", use_auth_token=hf_token)
-    diarization = pipeline(audio_path)
+speaker_files = {}
 
-    # Associer les segments à des locuteurs
-    speakers = {}
-    for turn, _, speaker in diarization.itertracks(yield_label=True):
-        text = " ".join(
-            word["text"] for word in transcription["segments"]
-            if turn.start <= word["start"] <= turn.end
-        )
-        speakers.setdefault(speaker, []).append(text)
+# Write transcriptions into respective files
+for _, segment in final_result.items():
+    speaker = segment["speaker"]
+    if speaker not in speaker_files:
+        speaker_files[speaker] = open(os.path.join(output_dir, f"{speaker}.txt"), "w", encoding="utf-8")
+    speaker_files[speaker].write(f'{segment["text"]}\n')
 
-    # Sauvegarder chaque locuteur dans un fichier séparé
-    for speaker, texts in speakers.items():
-        with open(os.path.join(output_dir, f"{speaker}.txt"), "w", encoding="utf-8") as f:
-            f.write("\n".join(texts))
+# Close all file handles
+for file in speaker_files.values():
+    file.close()
 
-    print(f"Fichiers de transcription sauvegardés dans {output_dir}")
+print(f"Transcriptions saved to: {output_dir}")
+
+for _, segment in final_result.items():
+    print(
+        f'{segment["start"]:.3f}\t{segment["end"]:.3f}\t {segment["speaker"]}\t{segment["text"]}'
+    )

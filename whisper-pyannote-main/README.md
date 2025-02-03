@@ -1,17 +1,16 @@
 # Pyannote - Whisper
-
+https://github.com/Jose-Sabater/whisper-pyannote
 
 ## Description
-This repo handles diarization and transcription word by word.  
-It is an alternative to [pyannote-whisper](https://github.com/yinruiqing/pyannote-whisper)  
-The main difference is in the way the words are matched with segments. In this project we look word by word if it belong to the segment or not.  
+This repo handles diarization and transcription word by word.
+It is an alternative to [pyannote-whisper](https://github.com/yinruiqing/pyannote-whisper)
+The main difference is in the way the words are matched with segments. In this project we look word by word if it belong to the segment or not.
 Important to pass the argument "word_timestamps=True"
 
 ## Installation
-1. Install [Whisper](https://github.com/openai/whisper)
-2. Install Pyannote https://huggingface.co/pyannote/speaker-diarization-3.1
+1. Install Pyannote https://huggingface.co/pyannote/speaker-diarization-3.1
 
-## Usage 
+## Usage
 
 ```python
 import whisper

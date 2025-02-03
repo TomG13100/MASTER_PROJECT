@@ -1,10 +1,16 @@
 import os
 import json
 import numpy as np
+import subprocess
 from tensorflow.keras.models import load_model
 from scripts.pre_process_key_word import all_words, severity_map
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+
+# Run usage.py
+print(f"Executing usage.py to generate transcriptions...")
+subprocess.run(["python", "whisper-pyannote-main/usage.py"], check=True)
 
 # Charger le modèle IA
 model = load_model("models/sca_model.h5")
@@ -13,7 +19,7 @@ def predict_from_transcriptions(transcription_dir, model_path):
     """
     Analyse les transcriptions des speakers, détecte les symptômes et prédit le risque SCA.
     """
-    print("🔎 Début de l'analyse des transcriptions...")
+    print("Début de l'analyse des transcriptions...")
 
     files = [f for f in os.listdir(transcription_dir) if f.endswith(".txt")]
     tokenizer = Tokenizer()
@@ -43,14 +49,14 @@ def predict_from_transcriptions(transcription_dir, model_path):
             "probabilité_SCA": float(round(probability_sca, 2)),  # Convertir float32 en float standard
             "symptômes_detectés": detected_symptoms,
             "score_de_gravité": float(round(avg_severity, 2)),  # Convertir en float standard
-            "conclusion": "SCA détecté 🛑" if probability_sca > 0.5 else "Pas de SCA ✅"
+            "conclusion": "SCA détecté" if probability_sca > 0.5 else "Pas de SCA"
         }
 
-    # ✅ Enregistrer les résultats dans un fichier JSON
+    #  Enregistrer les résultats dans un fichier JSON
     with open("data/transcriptions audio/diagnostic_results.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
-    print("📊 Analyse terminée ! Résultats enregistrés dans `data/transcriptions audio/diagnostic_results.json`")
+    print(" Analyse terminée ! Résultats enregistrés dans `data/transcriptions audio/diagnostic_results.json`")
 
 # Exécuter la prédiction
 predict_from_transcriptions("data/transcriptions audio/", "models/sca_model.h5")

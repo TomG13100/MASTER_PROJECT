@@ -13,7 +13,7 @@ def predict_from_transcriptions(transcription_dir, model_path):
     """
     Analyse les transcriptions des speakers, détecte les symptômes et prédit le risque SCA.
     """
-    print("🔎 Début de l'analyse des transcriptions...")
+    print("Début de l'analyse des transcriptions...")
 
     files = [f for f in os.listdir(transcription_dir) if f.endswith(".txt")]
     tokenizer = Tokenizer()
@@ -43,14 +43,14 @@ def predict_from_transcriptions(transcription_dir, model_path):
             "probabilité_SCA": round(probability_sca, 2),
             "symptômes_detectés": detected_symptoms,
             "score_de_gravité": round(avg_severity, 2),
-            "conclusion": "SCA détecté 🛑" if probability_sca > 0.5 else "Pas de SCA ✅"
+            "conclusion": "SCA détecté" if probability_sca > 0.5 else "Pas de SCA"
         }
 
-    # ✅ Enregistrer les résultats dans un fichier JSON
+    # Enregistrer les résultats dans un fichier JSON
     with open("transcriptions/diagnostic_results.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
-    print("📊 Analyse terminée ! Résultats enregistrés dans `transcriptions/diagnostic_results.json`")
+    print("Analyse terminée ! Résultats enregistrés dans `transcriptions/diagnostic_results.json`")
 
 # Exécuter la prédiction
 predict_from_transcriptions("transcriptions", "models/sca_model.h5")

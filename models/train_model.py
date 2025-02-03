@@ -44,21 +44,21 @@ non_sca_words, severity_non_sca = load_keywords("data/non_sca_words.json")
 all_words = sca_words + non_sca_words
 severity_map = {**severity_sca, **severity_non_sca}
 
-# ✅ Vérification après extraction
-print(f"🔍 Nombre total de mots-clés : {len(all_words)}")
-print(f"🔍 Exemple de mots-clés : {all_words[:5]}")
-print(f"🔍 Exemple de sévérité : {list(severity_map.items())[:5]}")
+# Vérification après extraction
+print(f"Nombre total de mots-clés : {len(all_words)}")
+print(f"Exemple de mots-clés : {all_words[:5]}")
+print(f"Exemple de sévérité : {list(severity_map.items())[:5]}")
 
 # Vérification finale
 if any(isinstance(item, dict) for item in all_words):
-    raise TypeError("❌ ERREUR : `all_words` contient encore des dictionnaires.")
+    raise TypeError(" ERREUR : `all_words` contient encore des dictionnaires.")
 
 # Création des labels
 labels = [1] * len(sca_words) + [0] * len(non_sca_words)
 
 # Tokenisation des mots-clés
 tokenizer = Tokenizer()
-tokenizer.fit_on_texts(all_words)  # ✅ Maintenant `all_words` est une liste de chaînes
+tokenizer.fit_on_texts(all_words)  # Maintenant `all_words` est une liste de chaînes
 
 sequences = tokenizer.texts_to_sequences(all_words)
 X = pad_sequences(sequences)
@@ -81,6 +81,6 @@ model.save(model_save_path)
 # Vérifier si le fichier a bien été créé
 import os
 if os.path.exists(model_save_path):
-    print(f"✅ Modèle entraîné et sauvegardé avec succès à {model_save_path}")
+    print(f"Modèle entraîné et sauvegardé avec succès à {model_save_path}")
 else:
-    print("❌ Erreur : Le modèle n'a pas été sauvegardé correctement.")
+    print("Erreur : Le modèle n'a pas été sauvegardé correctement.")

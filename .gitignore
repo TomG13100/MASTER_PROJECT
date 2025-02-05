@@ -1,2 +1,4 @@
 secrets.json
-transcriptions audio/*
+transcriptions audio/diagnostic_results.json
+transcriptions audio/SPEAKER_00.txt
+transcriptions audio/SPEAKER_01.txt

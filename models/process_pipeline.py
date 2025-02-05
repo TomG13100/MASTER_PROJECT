@@ -6,14 +6,48 @@ from tensorflow.keras.models import load_model
 from scripts.pre_process_key_word import all_words, severity_map
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.utils import custom_object_scope
+import tensorflow as tf
+print(tf.config.list_physical_devices('GPU'))
+
+transcription_dir = "data/transcriptions_audio"
+# Run transcribe_diarize.py
+# Vérifier si le dossier existe et contient au moins un fichier
+if os.path.exists(transcription_dir) and any(os.listdir(transcription_dir)):
+    print("Transcriptions déjà présentes. Skipping transcribe_diarize.py.")
+else:
+    print(f"Executing transcribe_diarize.py to generate transcriptions...")
+    subprocess.run(["python", "models/transcribe_diarize.py"], check=True)
 
 
-# Run usage.py
-print(f"Executing transcribe_diarize.py to generate transcriptions...")
-subprocess.run(["python", "models/transcribe_diarize.py"], check=True)
 
-# Charger le modèle IA
-model = load_model("models/sca_model.h5")
+import h5py
+
+# Charger le modèle .h5 et supprimer batch_shape
+with h5py.File("models/sca_model.h5", "r+") as f:
+    if "model_config" in f.attrs:
+        model_config = f.attrs["model_config"]
+        if isinstance(model_config, bytes):  # Si c'est un byte, on le décode
+            model_config = model_config.decode("utf-8")
+
+        model_config = model_config.replace('"batch_shape"', '"input_shape"')
+        f.attrs["model_config"] = model_config.encode("utf-8")
+
+from tensorflow.keras.mixed_precision import Policy
+
+# Charger le modèle en précisant les objets personnalisés
+with custom_object_scope({'DTypePolicy': Policy}):
+    model = load_model("models/sca_model.h5", compile=False)
+
+# Sauvegarde le modèle corrigé au format Keras
+model.save("models/sca_model.keras")
+
+# Charger le modèle corrigé
+with custom_object_scope({'DTypePolicy': Policy}):
+    model = load_model("models/sca_model.keras", compile=False)
+
+
+
 
 def predict_from_transcriptions(transcription_dir, model_path):
     """
@@ -53,10 +87,10 @@ def predict_from_transcriptions(transcription_dir, model_path):
         }
 
     #  Enregistrer les résultats dans un fichier JSON
-    with open("data/transcriptions audio/diagnostic_results.json", "w", encoding="utf-8") as f:
+    with open("data/transcriptions_audio/diagnostic_results.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
-    print(" Analyse terminée ! Résultats enregistrés dans `data/transcriptions audio/diagnostic_results.json`")
+    print(" Analyse terminée ! Résultats enregistrés dans `data/transcriptions_audio/diagnostic_results.json`")
 
 # Exécuter la prédiction
-predict_from_transcriptions("data/transcriptions audio/", "models/sca_model.h5")
+predict_from_transcriptions("data/transcriptions_audio/", "models/sca_model.keras")

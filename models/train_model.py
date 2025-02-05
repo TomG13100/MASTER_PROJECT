@@ -75,7 +75,7 @@ model = build_mlp_model(input_shape, num_classes=2)
 model.fit(X_train, np.array(y_train), validation_data=(X_val, np.array(y_val)), epochs=10, batch_size=8)
 
 # Sauvegarder le modèle entraîné
-model_save_path = "models/sca_model.h5"
+model_save_path = "models/sca_model.keras"
 model.save(model_save_path)
 
 # Vérifier si le fichier a bien été créé

@@ -1,0 +1,10 @@
+{
+    "probabilité_SCA": 1.0,
+    "symptômes_detectés": {
+        "douleur": 5,
+        "mal": 5,
+        "": 2
+    },
+    "score_de_gravité": 4.0,
+    "conclusion": "SCA détecté"
+}

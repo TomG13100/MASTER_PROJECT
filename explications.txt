@@ -1,0 +1,22 @@
+whisper-pyannote-main > utils.py 
+
+= associer les mots transcrits à chaque locuteur
++ lier chaque réponse à la question de l'interlocuteur
+
+
+whisper-pyannote-main > usage.py
+
+=identifie qui parle et à quel moment
++ transcription automatique du fichier audio
++ génère des fichiers individuels par locuteur
+
+
+scripts > pre_process_key_word.py
+
+- extrait et structure les mots-clés SCA et non-SCA
+
+
+scripts > transcribe_audio.py
+
+- Automatise la transcription de plusieurs fichiers audio.
+- Stocke chaque transcription dans un fichier .txt du même nom que l’audio.

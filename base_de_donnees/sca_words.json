@@ -2,8 +2,8 @@
     "keywords":[
         {
             "word": "douleur thoracique",
-            "synonyms": ["douleur à la poitrine","brule la poitrine", "oppression thoracique", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine",
-            "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard", "douleur constrictive", "sensation de pesanteur", "douleur dans le torse", "pointe au coeur"],
+            "synonyms": ["douleur à la poitrine","douleur au milieu de la poitrine","brule la poitrine", "oppression thoracique", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine",
+            "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard", "douleur constrictive", "sensation de pesanteur", "douleur dans le torse", "pointe au coeur", "douleur à type de serrement", "douleur à type de coups", "douleur à type de poing"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
@@ -17,7 +17,7 @@
         },
         {
             "word": "irradie dans le bras gauche",
-            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche", "picotement dans le bras gauche", "fourmillement dans le bras gauche", "gène dans le bras gauche"],
+            "synonyms": ["irradiation","douleur dans le bras gauche", "mal dans le bras gauche", "picotement dans le bras gauche", "fourmillement dans le bras gauche", "gène dans le bras gauche"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
@@ -30,7 +30,7 @@
             "severity": 5
         },
         {
-            "word": "irradie dans l'épaule'",
+            "word": "irradie dans l'épaule",
             "synonyms": ["douleur dans l'épaule'", "mal dans l'épaule'", "picotement dans l'épaule'", "fourmillement dans l'épaule'", "gène dans l'épaule'"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
@@ -44,15 +44,22 @@
             "severity": 5
         },
         {
+            "word": "irradie dans la gorge",
+            "synonyms": ["douleur dans la gorge", "mal à la gorge", "picotement dans la gorge", "fourmillement dans la gorge", "gène dans la gorge"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
             "word": "douleur permanente",
-            "synonyms": ["douleur continue", "douleur constante", "douleur aigue", "douleur persistante"],
+            "synonyms": ["douleur continue", "douleur constante", "douleur aigue", "douleur persistante","douleur diffuse"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
         },
         {
             "word": "diabète",
-            "synonyms": ["traitement pour le diabète", "médicament pour le diabète"],
+            "synonyms": ["traitement pour le diabète", "médicament pour le diabète", "diabétique"],
             "role": "patient",
             "trigger": ["oui", "j'ai", ""],
             "severity": 1
@@ -137,6 +144,55 @@
         {
             "word": "trinitrine",
             "synonyms": ["boufée", "natispray"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "pale",
+            "synonyms": ["pâleur"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 3
+        },
+        {
+            "word": "douleur brutale",
+            "synonyms": ["douleur soudaine", "douleur subite"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 3
+        },
+        {
+            "word": "douleur majorée à l'inspiration",
+            "synonyms": ["douleur augmentant à l'inspiration"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 3
+        },
+        {
+            "word": "douleur à la palpation",
+            "synonyms": [],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 3
+        },
+        {
+            "word": "douleur majorée à l'effort",
+            "synonyms": ["douleur augmentant à l'effort", "douleur augmentant avec le mouvement", "douleur après une séance de sport"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 3
+        },
+        {
+            "word": "douleur identique à un ancien infarctus",
+            "synonyms": [],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "antécédents de maladie cardiaque",
+            "synonyms": ["antécedent de crise cardiaque", "antécedent d'infarctus", "antécedent de stent", "antécedent familiaux cardiaques"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5

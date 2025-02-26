@@ -1,3 +1,4 @@
+import re
 import json
 
 # Charger la base de données de keywords
@@ -23,23 +24,40 @@ for item in non_sca_data["keywords"]:
 
 # Lire les symptômes détectés dans le fichier texte
 with open("symptomes.txt", "r", encoding="utf-8") as f:
-    symptomes_detectes = [ligne.strip().lower() for ligne in f.readlines()]
+    texte = f.read().lower()
 
-# Afficher les symptômes détectés
-print("Symptômes détectés :", symptomes_detectes)
+# Afficher le texte
+print("Transcription :", texte)
 
-# Vérifier quels symptômes sont reconnus
-symptomes_reconnus = [s for s in symptomes_detectes if s in symptomes_severite]
-symptomes_non_sca = [s for s in symptomes_detectes if s in non_sca_severite]
+# Extraction de l'âge du patient
+match_age = re.search(r"(\d{2})\s*ans", texte)
+age = int(match_age.group(1)) if match_age else None
 
-print("Symptômes reconnus :", symptomes_reconnus)
+# Détection du genre
+homme = bool(re.search(r"\b(il|homme|monsieur)\b", texte))
+femme = bool(re.search(r"\b(elle|femme|madame)\b", texte))
+
+# Vérifier l'âge critique
+age_critique = (homme and age and age >= 50) or (femme and age and age >= 55)
+
+# Détection des symptômes
+symptomes_detectes = [mot for mot in symptomes_severite.keys() if mot in texte]
+symptomes_non_sca = [mot for mot in non_sca_severite.keys() if mot in texte]
+
+print("Symptômes reconnus :", symptomes_detectes)
 print("Symptômes non-SCA reconnus :", symptomes_non_sca)
 
-# Calcul du score
-score_total = sum(symptomes_severite.get(s, 0) for s in symptomes_reconnus) - sum(non_sca_severite.get(s, 0) for s in symptomes_non_sca)
+# Calcul du score de sévérité
+score_total = sum(symptomes_severite[s] for s in symptomes_detectes) - sum(non_sca_severite[s] for s in symptomes_non_sca)
+
+# Ajouter un bonus de score si l'âge est critique
+if age_critique:
+    score_total += 5
 
 # Empêcher un score négatif
 score_total = max(score_total, 0)
 
-print(f"Score total de sévérité ajusté : {score_total}")
-
+# Affichage des résultats
+print("Âge détecté :", age)
+print("Genre détecté :", "Homme" if homme else "Femme" if femme else "Inconnu")
+print("Score total de sévérité ajusté :", score_total)

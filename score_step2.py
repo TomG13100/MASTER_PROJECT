@@ -31,10 +31,6 @@ print("Transcription :", texte)
 match_age = re.search(r"(\d{2})\s*ans", texte)
 age = int(match_age.group(1)) if match_age else None
 
-# === Genre ===
-homme = bool(re.search(r"\b(il|homme|monsieur)\b", texte))
-femme = bool(re.search(r"\b(elle|femme|madame)\b", texte))
-
 # === Âge critique ===
 age_critique = (homme and age and age >= 50) or (femme and age and age >= 55)
 
@@ -73,7 +69,6 @@ else:
 
 # === Affichage final ===
 print("Âge détecté :", age if age else "Non détecté")
-print("Genre détecté :", "Homme" if homme else "Femme" if femme else "Inconnu")
 print("Score total de sévérité ajusté :", score_total)
 print("Pourcentage estimé de risque de SCA ST+ :", f"{pourcentage_risque} %")
 print("Interprétation :", interpretation)

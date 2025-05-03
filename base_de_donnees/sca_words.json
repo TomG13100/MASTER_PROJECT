@@ -1,6 +1,42 @@
 {
     "keywords":[
         {
+            "word": "homme",
+            "synonyms": ["Mari", "frère", "fils", "époux", "compagnon", "père" ],
+            "role": "patient",
+            "trigger": ["mon", "je suis"],
+            "severity": 5
+        },
+        {
+            "word": "43 ans",
+            "synonyms": ["44 ans", "45 ans", "46 ans", "47 ans", "48 ans", "49 ans", "50 ans", "51 ans",  "52 ans",  "53 ans",  "54 ans",  "55 ans",  "56 ans",  "57 ans"  ],
+            "role": "patient",
+            "trigger": ["j'ai"],
+            "severity": 4
+        },
+        {
+            "word": "58 ans",
+            "synonyms": ["59 ans", "60 ans", "61 ans", "62 ans", "63 ans", "64 ans", "65 ans", "66 ans",  "67 ans",  "68 ans",  "69 ans",  "70 ans",  "71 ans",  "72 ans", "73 ans", "74 ans", "75 ans", "76 ans", "77 ans", "78 ans","79 ans", "80 ans", "81 ans", "82 ans", "83 ans", "84 ans", "85 ans", "86 ans", "87 ans", "88 ans", "89 ans", "90 ans", "91 ans", "92 ans", "93 ans", "94 ans", "95 ans", "96 ans", "97 ans", "98 ans", "99 ans", "100 ans", "101 ans", "102 ans", "103 ans", "104 ans", "105 ans", "106 ans"  ],
+            "role": "patient",
+            "trigger": ["j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "tabagisme",
+            "synonyms": ["je fume", "tabac", "cigarette", "1 paquet"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
+            "word": "Douleur constrictive rétrosternale ",
+            "synonyms": ["En barre ", "Oppression", "Pesanteur", "poids", "étau", "serrement", "serre", "comprime", "compression", 
+            "Poitrine", "douleur à gauche", "douleur au sein gauche"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
             "word": "douleur thoracique",
             "synonyms": ["douleur à la poitrine","douleur au milieu de la poitrine","brule la poitrine", "oppression thoracique", "pique la poitrine", "serre la poitrine", "appui sur la poitrine", "mal à la poitrine",
             "mal au niveau du thorax", "poids sur la poitrine", "coup de poignard", "douleur constrictive", "sensation de pesanteur", "douleur dans le torse", "pointe au coeur", "douleur à type de serrement", "douleur à type de coups", "douleur à type de poing"],
@@ -10,14 +46,21 @@
         },
         {
             "word": "douleur epigastrique",
-            "synonyms": ["douleur au ventre", "douleur gastrique"],
+            "synonyms": ["douleur au ventre", "douleur gastrique", "brulure gastrique", "douleur au ventre"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
-            "severity": 2
+            "severity": 5
+        },
+        {
+            "word": "inaugurale",
+            "synonyms": ["c'est la première fois"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
         },
         {
             "word": "irradie dans le bras gauche",
-            "synonyms": ["irradiation","douleur dans le bras gauche", "mal dans le bras gauche", "picotement dans le bras gauche", "fourmillement dans le bras gauche", "gène dans le bras gauche"],
+            "synonyms": ["douleur dans le bras gauche", "mal dans le bras gauche"],
             "role": "patient",
             "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
@@ -37,13 +80,6 @@
             "severity": 5
         },
         {
-            "word": "irradie dans la machoire",
-            "synonyms": ["douleur dans la machoire", "mal à la machoire", "picotement dans la machoire", "fourmillement dans la machoire", "gène dans la machoire"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
-        },
-        {
             "word": "irradie dans la gorge",
             "synonyms": ["douleur dans la gorge", "mal à la gorge", "picotement dans la gorge", "fourmillement dans la gorge", "gène dans la gorge"],
             "role": "patient",
@@ -51,123 +87,46 @@
             "severity": 5
         },
         {
+            "word": "irradie dans la machoire",
+            "synonyms": ["douleur dans la machoire", "mal à la machoire"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 5
+        },
+        {
             "word": "douleur permanente",
-            "synonyms": ["douleur continue", "douleur constante", "douleur aigue", "douleur persistante","douleur diffuse"],
+            "synonyms": ["douleur continue", "douleur constante","douleur consistante", "douleur persistante", "douleur aigue", "douleur diffuse" ],
             "role": "patient",
             "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
         },
         {
-            "word": "diabète",
-            "synonyms": ["traitement pour le diabète", "médicament pour le diabète", "diabétique"],
+            "word": "douleur intense",
+            "synonyms": ["7/10", "8/10", "9/10", "10/10", "ça fait très très mal","très fort"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", ""],
-            "severity": 1
-        },
-        {
-            "word": "dyspnée",
-            "synonyms": ["respiration anormale", "essoufflement","mal à respirer", "gèner pour respirer"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 2
-        },
-        {
-            "word": "sudation",
-            "synonyms": ["transpiration", "sueur"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 2
-        },
-        {
-            "word": "nausée",
-            "synonyms": ["haut-le-coeur", "envie de vomir"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 2
-        },
-        {
-            "word": "douleur à l'effort",
-            "synonyms": ["douleur lors d'une activité physique", "douleur déclenché à l'effort"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
+            "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
         },
         {
-            "word": "tabac",
-            "synonyms": ["tabagisme", "fumeur", "fumée"],
+            "word": "transpiration",
+            "synonyms": ["sueurs", "sudations", "je transpire", "je sue"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
+            "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
         },
         {
-            "word": "porte un stent",
-            "synonyms": ["stent", "angioplastie"],
+            "word": "Antécédent personnel infarctus du myocarde / stent",
+            "synonyms": ["infarctus", "stents", "même douleur que précedemment", "antécedent d'infarctus", "antécedent de crise cardiaque", "douleur identique à l'infarctus", "stent", "angioplastie", "opération du coeur"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
+            "trigger": ["oui", "j'ai", "je ressens"],
             "severity": 5
         },
         {
-            "word": "opération du coeur",
-            "synonyms": ["coronarien stenté", "coronarien"],
+            "word": "Polyvasculaires",
+            "synonyms": ["stents dans les jambes", "pontage dans les jambes", "stent dans la carotide"],
             "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 5
-        },
-        {
-            "word": "tension",
-            "synonyms": ["hypertension", "médicament pour la tension", "traitement pour la tension"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 5
-        },
-        {
-            "word": "obésité",
-            "synonyms": ["surpoids"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai", "ça"],
-            "severity": 5
-        },
-        {
-            "word": "cholestérol",
-            "synonyms": ["hypercholestérolémie"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
-        },
-        {
-            "word": "antécedent d'infarctus",
-            "synonyms": ["antécedent de crise cardiaque", "douleur identique à l'infarctus"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
-        },
-        {
-            "word": "trinitrine",
-            "synonyms": ["boufée", "natispray"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
-        },
-        {
-            "word": "pale",
-            "synonyms": ["pâleur"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 3
-        },
-        {
-            "word": "douleur brutale",
-            "synonyms": ["douleur soudaine", "douleur subite"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 3
-        },
-        {
-            "word": "douleur majorée à l'inspiration",
-            "synonyms": ["douleur augmentant à l'inspiration"],
-            "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 3
+            "trigger": ["oui", "j'ai", "je ressens"],
+            "severity": 4
         },
         {
             "word": "douleur à la palpation",
@@ -177,32 +136,88 @@
             "severity": 3
         },
         {
-            "word": "douleur majorée à l'effort",
-            "synonyms": ["douleur augmentant à l'effort", "douleur augmentant avec le mouvement", "douleur après une séance de sport"],
+            "word": "diabète",
+            "synonyms": ["médicaments pour le diabète", "je prends de l'insuline", "diabétique"],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 4
+        },
+        {
+            "word": "cholestérol",
+            "synonyms": ["traitement pour le cholestérol"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 4
+        },
+        {
+            "word": "HTAl",
+            "synonyms": ["Hypertendu","hypertension", "je prends des médicaments pour l’hypertension", "médicament pour la tension", "traitement pour la tension"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 4
+        },
+        {
+            "word": "obésité",
+            "synonyms": ["surpoids"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
             "severity": 3
         },
         {
-            "word": "douleur identique à un ancien infarctus",
-            "synonyms": [],
+            "word": "Hérédité familiale ",
+            "synonyms": ["Mon père a fait un infarctus","ma mère a fait un infarctus", "mon frère a fait un infarctus", "ma sœur a fait un infarctus "],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 4
+        },
+        {
+            "word": "Gris",
+            "synonyms": ["pâleur","Pâle", "grisatre"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 3
+        },
+        {
+            "word": "Nausées",
+            "synonyms": ["Vomissement","envie de vomir", "vomir", "haut le coeur"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 3
+        },
+        {
+            "word": "Effort",
+            "synonyms": ["après un effort","exercice", "sport", "exercice", "marche", "course", "vélo", "douleur à l'effort"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
             "severity": 5
         },
         {
-            "word": "antécédents de maladie cardiaque",
-            "synonyms": ["antécedent de crise cardiaque", "antécedent d'infarctus", "antécedent de stent", "antécedent familiaux cardiaques"],
+            "word": "Trinitrine",
+            "synonyms": ["Spray", "bouffée", "patch de discotrine", "amélioration de la douleur après trinitrine", "boufée", "natispray"],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 4
         },
         {
-            "word": "patch de trinitrine",
-            "synonyms": ["discotrine"],
+            "word": "Impression de mourir",
+            "synonyms": ["Je me sens partir"],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 3
+        },
+        {
+            "word": "dyspnée",
+            "synonyms": ["Essoufflé", "essoufflement", "du mal à respirer", "difficultés à respirer",  "difficultés pour parler", "du mal à parler"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 2
+        },
+        {
+            "word": "Anxiété",
+            "synonyms": ["Crise d’angoisse", "stress", "je suis stressé", "douleur différente de crise d’angoisse", "pas la même douleur que l’angoisse"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", ""],
+            "severity": 2
         }
     ]
 }

@@ -1,60 +1,109 @@
 {
     "keywords":[
         {
-            "word": "douleur intermitente",
-            "synonyms": ["douleur passagère", "douleur qui revient", "douleur à la palpation"],
+            "word": "Type de douleur ",
+            "synonyms": ["En pointe", "en coup de poignard", "en picotement", "coup d’aiguille", "ça pique" ],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
         },
         {
-            "word": "fièvre",
-            "synonyms": [],
+            "word": "Durée de la douleur",
+            "synonyms": ["Brève", "j’ai plus mal" ],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 4
+        },
+        {
+            "word": "Basi thoracique",
+            "synonyms": ["sous les côtes" ],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 4
+        },
+        {
+            "word": "douleur reproduite à la palpation ",
+            "synonyms": ["douleur quand j'ai bouge" ],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 4
+        },
+        {
+            "word": "douleur modifiée par les mouvements",
+            "synonyms": ["douleur aggravée ou soulagée par certains mouvements du thorax", "du bras ou du dos", "effort musculaire" ],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 4
+        },
+        {
+            "word": "Douleur soulagée par les antalgiques de palier 1 ou par les anxiolytiques",
+            "synonyms": ["Soulagée par le doliprane", "le perfalgan", "atarax", "lexomil"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai"],
+            "severity": 4
+        },
+        {
+            "word": "Pas d'antécédents",
+            "synonyms": ["Pas de diabète", "pas de cholestérol", "pas de tabagisme", "je ne fume pas", "je ne prends pas de médicaments"],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
             "severity": 5
         },
         {
-            "word": "toux",
-            "synonyms": ["toux sèche", "toux grasse", "toux persistante", "toux chronique"],
+            "word": "pouls asymétrique",
+            "synonyms": ["", ""],
             "role": "patient",
             "trigger": ["oui", "j'ai"],
+            "severity": 2
+        },
+        {
+            "word": "dyspnée",
+            "synonyms": ["Essoufflé", "essoufflement", "du mal à respirer", "difficultés à respirer", "difficultés pour parler", "du mal à parler"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 3
+        },
+        {
+            "word": "Fièvre",
+            "synonyms": ["Température", "Fébrile"],
+            "role": "patient",
+            "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
-            "word": "douleur intense",
-            "synonyms": ["douleur brutale"],
+            "word": "Toux",
+            "synonyms": ["Toux sèche", "toux grasse", "je tousse"],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
+            "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
-            "word": "douleur dans le dos",
-            "synonyms": ["douleur dorsale"],
+            "word": "Antibiothérapie",
+            "synonyms": ["Je prends des antibiotiques"],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
+            "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
         },
         {
-            "word": "courbatures",
-            "synonyms": [],
+            "word": "18 ans",
+            "synonyms": ["18 ans", "19 ans", "20 ans", "21 ans", "22 ans", "23 ans", "24 ans", "25 ans", "26 ans", "27 ans", "28 ans", "29 ans", "30 ans", "31 ans", "32 ans", "33 ans", "34 ans", "35 ans", "36 ans", "37 ans", "38 ans", "39 ans", "40 ans", "41 ans", "42 ans", "43 ans" ],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 4
         },
         {
-            "word": "angoisse",
-            "synonyms": ["anxiété", "stress", "crise d'angoisse"],
+            "word": "Courbatures",
+            "synonyms": ["J’ai mal partout"],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
+            "trigger": ["oui", "j'ai", "ça"],
             "severity": 5
-        },
+        }, 
         {
-            "word": "antécédents psychiatriques",
-            "synonyms": ["psychatre, psychiatrique"],
+            "word": "Anxiété",
+            "synonyms": ["Stress", "crise d’angoisse", "même douleur que crise d’angoisse"],
             "role": "patient",
-            "trigger": ["oui", "j'ai"],
-            "severity": 5
+            "trigger": ["oui", "j'ai", "ça"],
+            "severity": 3
         }
     ]
 }
